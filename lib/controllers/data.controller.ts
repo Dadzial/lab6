@@ -18,6 +18,8 @@ class DataController implements Controller {
 
     private initializeRoutes() {
         this.router.get(`${this.path}/get`, this.getAll);
+        this.router.post(`${this.path}/create`, this.dataService.create);
+        this.router.delete(`${this.path}/:id`, this.dataService.delete);
     }
 
     private getAll = async (request: Request, response: Response, next: NextFunction) => {
